@@ -156,7 +156,9 @@ spec:
         - name: SMTP_TLS_ENABLED
           value: "0"
         - name: SnapshotDebugger_EXTENSION_VERSION
-          value: disabled            
+          value: disabled  
+        - name: SSL_CERT
+          value: "Y"             
         - name: SUPPORTED_VISUAL_GUID
           value: 2B7A5FD2992D434DAE0B149479307B7B
         - name: TEMPLATE_CLIENT_PORT
