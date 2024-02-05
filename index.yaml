@@ -14,6 +14,6 @@ entries:
     name: inforiver
     type: application
     urls:
-    - Packages/inforiver-0.1.0.tgz
+    - dist/inforiver-0.1.0.tgz
     version: 0.1.0
 generated: "2024-02-05T19:50:24.5739155+05:30"
