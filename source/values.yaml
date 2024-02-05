@@ -1,0 +1,88 @@
+# Default values for inforiver.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+image:
+  repository: turing.azurecr.io
+  pullPolicy: always
+  tag: ""
+
+imageCredentials:
+  registry: turing.azurecr.io
+  username: InforiverRead
+  password: ""
+
+nameOverride: ""
+fullNameOverride: ""
+
+ports:
+  containerPort: 12000
+  sourcePort: 80
+
+# Environment Variables
+env:
+  ADMIN_PORTAL_URL: ""
+  APP_HOST: ""
+  AWS_REGION: 
+  BLOB_CONTAINER_NAME: 
+  BOOTSTRAP_ON_PREMISE_WORKSPACE_ADMIN: ""
+  BOOTSTRAP_ON_PREMISE_WORKSPACE_DOMAIN: ""
+  BOOTSTRAP_ON_PREMISE_WORKSPACE_LICENSE: ""
+  BOOTSTRAP_ON_PREMISE_WORKSPACE_NAME: ""
+  DB_HOST: 
+  DB_NAME: 
+  DB_PASS: 
+  DB_USER: 
+  DOCKER_REGISTRY_SERVER_PASSWORD: 
+  GOOGLE_APP_CLIENT_ID: 
+  GOOGLE_APP_SECRET_ID:  
+  LINKEDIN_APP_CLIENT_ID: 
+  LINKEDIN_APP_SECRET_ID: 
+  O365_APP_CLIENT_ID: 
+  O365_APP_SECRET_ID: 
+  O365_APP_TENANT_ID: 
+  PORT: 12000
+  PUBKEY_64: 
+  REDIS_HOST:
+  REDIS_PASSWORD: ""
+  REDIS_PORT: 6379
+  SMTP_API_KEY: ""
+  SMTP_HOST: ""
+  SMTP_PORT: "2525"
+  SMTP_USERNAME: ""
+  SMTP_SERVICE: 
+  TWITTER_APP_CLIENT_ID: 
+  TWITTER_APP_SECRET_ID: 
+  WEBHOOK_KEY: 
+
+resources:
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  limits:
+    cpu: 100m
+    memory: 128Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+  # targetMemoryUtilizationPercentage: 80
+
+loadbalancer: 
+  SSL_ARN: "" 
+  PUB_SUBNET_ID: ""
+  APP_SUBNET_NAME: ""  
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
